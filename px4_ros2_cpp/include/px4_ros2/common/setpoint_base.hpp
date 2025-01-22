@@ -25,6 +25,7 @@ public:
   {
     void fillControlMode(px4_msgs::msg::VehicleControlMode & control_mode)
     {
+      control_mode.flag_control_manual_enabled = manual_enabled;
       control_mode.flag_control_rates_enabled = rates_enabled;
       control_mode.flag_control_attitude_enabled = attitude_enabled;
       control_mode.flag_control_acceleration_enabled = acceleration_enabled;
@@ -33,8 +34,10 @@ public:
       control_mode.flag_control_altitude_enabled = altitude_enabled;
       control_mode.flag_control_allocation_enabled = control_allocation_enabled;
       control_mode.flag_control_climb_rate_enabled = climb_rate_enabled;
+      control_mode.flag_multicopter_position_control_enabled = multicopter_position_control_enabled;
     }
 
+    bool manual_enabled{false};
     bool control_allocation_enabled{true};
     bool rates_enabled{true};
     bool attitude_enabled{true};
@@ -42,8 +45,8 @@ public:
     bool acceleration_enabled{true};
     bool velocity_enabled{true};
     bool position_enabled{true};
-
     bool climb_rate_enabled{false};
+    bool multicopter_position_control_enabled{false};
   };
 
   explicit SetpointBase(Context & context)
