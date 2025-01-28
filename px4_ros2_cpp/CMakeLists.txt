@@ -50,6 +50,7 @@ set(HEADER_FILES
         include/px4_ros2/odometry/angular_velocity.hpp
         include/px4_ros2/odometry/attitude_setpoint.hpp
         include/px4_ros2/odometry/torque_setpoint.hpp
+        include/px4_ros2/odometry/rate_setpoint.hpp
         include/px4_ros2/utils/frame_conversion.hpp
         include/px4_ros2/utils/geodesic.hpp
         include/px4_ros2/utils/geometry.hpp
@@ -81,6 +82,7 @@ add_library(px4_ros2_cpp
         src/odometry/angular_velocity.cpp
         src/odometry/attitude_setpoint.cpp
         src/odometry/torque_setpoint.cpp
+        src/odometry/rate_setpoint.cpp
         src/utils/geodesic.cpp
         src/utils/map_projection_impl.cpp
 )
