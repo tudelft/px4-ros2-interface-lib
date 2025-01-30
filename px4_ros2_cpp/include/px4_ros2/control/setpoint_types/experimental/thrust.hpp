@@ -27,7 +27,7 @@ public:
   ~ThrustSetpointType() override = default;
 
   Configuration getConfiguration() override;
-  float desiredUpdateRateHz() override {return 200.f;}
+  float desiredUpdateRateHz() override {return 500.f;}
 
   void update(
     const Eigen::Vector3f & thrust_setpoint_frd);
