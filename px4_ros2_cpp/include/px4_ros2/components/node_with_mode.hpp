@@ -37,7 +37,9 @@ class NodeWithMode : public rclcpp::Node
 
 public:
   explicit NodeWithMode(std::string node_name, bool enable_debug_output = false)
-  : Node(node_name)
+  : Node(node_name, rclcpp::NodeOptions()
+                        .allow_undeclared_parameters(true)
+                        .automatically_declare_parameters_from_overrides(true))
   {
     if (enable_debug_output) {
       auto ret =
