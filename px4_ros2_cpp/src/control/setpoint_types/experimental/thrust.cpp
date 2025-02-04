@@ -32,7 +32,7 @@ SetpointBase::Configuration ThrustSetpointType::getConfiguration()
 {
   Configuration config{};
   config.manual_enabled = true;
-  config.rates_enabled = true;
+  config.rates_enabled = false;
   config.attitude_enabled = true;
   config.altitude_enabled = true;
   config.climb_rate_enabled = true;
