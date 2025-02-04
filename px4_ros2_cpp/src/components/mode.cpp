@@ -121,9 +121,12 @@ void ModeBase::updateSetpointUpdateTimer()
 
   if (activate) {
     if (!_setpoint_update_timer) {
+      RCLCPP_DEBUG(
+        node().get_logger(), "Mode '%s': setpoint update rate %.2f Hz",
+        _registration->name().c_str(), 1000.f / _setpoint_update_rate_hz);
       _setpoint_update_timer = node().create_wall_timer(
-        std::chrono::milliseconds(
-          static_cast<int64_t>(1000.f /
+        std::chrono::microseconds(
+          static_cast<int64_t>(1000000.f /
           _setpoint_update_rate_hz)), [this]() {
           const auto now = node().get_clock()->now();
           const float dt_s = (now - _last_setpoint_update).seconds();
