@@ -9,12 +9,12 @@
 namespace px4_ros2
 {
 
-TorqueSetpointType::TorqueSetpointType(Context & context)
+TorqueSetpointType::TorqueSetpointType(Context & context, const std::string & topic)
 : SetpointBase(context), _node(context.node())
 {
   _vehicle_torque_setpoint_pub =
     context.node().create_publisher<px4_msgs::msg::VehicleTorqueSetpoint>(
-    context.topicNamespacePrefix() + "fmu/in/vehicle_torque_setpoint", 1);
+    context.topicNamespacePrefix() + topic, 1);
 }
 
 void TorqueSetpointType::update(

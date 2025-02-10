@@ -9,12 +9,12 @@
 namespace px4_ros2
 {
 
-ThrustSetpointType::ThrustSetpointType(Context & context)
+ThrustSetpointType::ThrustSetpointType(Context & context, const std::string & topic)
 : SetpointBase(context), _node(context.node())
 {
   _vehicle_thrust_setpoint_pub =
     context.node().create_publisher<px4_msgs::msg::VehicleThrustSetpoint>(
-    context.topicNamespacePrefix() + "fmu/in/vehicle_thrust_setpoint", 1);
+    context.topicNamespacePrefix() + topic, 1);
 }
 
 void ThrustSetpointType::update(

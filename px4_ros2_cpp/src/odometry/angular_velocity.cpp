@@ -8,8 +8,8 @@
 namespace px4_ros2
 {
 
-OdometryAngularVelocity::OdometryAngularVelocity(Context & context)
-: Subscription<px4_msgs::msg::VehicleAngularVelocity>(context, "fmu/out/vehicle_angular_velocity")
+OdometryAngularVelocity::OdometryAngularVelocity(Context & context, const std::string & topic)
+: Subscription<px4_msgs::msg::VehicleAngularVelocity>(context, topic)
 {
   RequirementFlags requirements{};
   requirements.angular_velocity = true;

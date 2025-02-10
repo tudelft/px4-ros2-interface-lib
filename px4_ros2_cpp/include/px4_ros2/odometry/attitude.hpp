@@ -23,7 +23,7 @@ namespace px4_ros2
 class OdometryAttitude : public Subscription<px4_msgs::msg::VehicleAttitude>
 {
 public:
-  explicit OdometryAttitude(Context & context);
+  explicit OdometryAttitude(Context & context, const std::string & topic = "fmu/out/vehicle_attitude");
 
   /**
    * @brief Get the vehicle's attitude.

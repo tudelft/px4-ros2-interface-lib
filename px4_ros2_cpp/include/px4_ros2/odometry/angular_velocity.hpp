@@ -22,7 +22,7 @@ namespace px4_ros2
 class OdometryAngularVelocity : public Subscription<px4_msgs::msg::VehicleAngularVelocity>
 {
 public:
-  explicit OdometryAngularVelocity(Context & context);
+  explicit OdometryAngularVelocity(Context & context, const std::string & topic = "fmu/out/vehicle_angular_velocity");
 
   /**
    * @brief Get the vehicle's angular velocity in FRD frame.

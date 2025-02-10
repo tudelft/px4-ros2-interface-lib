@@ -22,7 +22,7 @@ namespace px4_ros2
 class ThrustSetpointType : public SetpointBase
 {
 public:
-  explicit ThrustSetpointType(Context & context);
+  explicit ThrustSetpointType(Context & context, const std::string & topic = "fmu/in/vehicle_thrust_setpoint");
 
   ~ThrustSetpointType() override = default;
 

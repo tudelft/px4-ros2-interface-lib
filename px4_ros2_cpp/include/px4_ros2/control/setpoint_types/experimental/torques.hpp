@@ -22,7 +22,7 @@ namespace px4_ros2
 class TorqueSetpointType : public SetpointBase
 {
 public:
-  explicit TorqueSetpointType(Context & context);
+  explicit TorqueSetpointType(Context & context, const std::string & topic = "fmu/in/vehicle_torque_setpoint");
 
   ~TorqueSetpointType() override = default;
 
